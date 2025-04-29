@@ -3,7 +3,7 @@
 int main() {
     char estado, codigo[3], cidade[20], estado2, codigo2[3], cidade2[20];
     int populacao, pontos_turisticos, populacao2, pontos_turisticos2;
-    float area, pib, area2, pib2;
+    float area, pib, area2, pib2, pib_per_capita, pib_per_capita2, densidade, densidade2;
 
     printf("Insira os dados da Carta 1.\n");
     printf("Digite o Estado: ");
@@ -27,6 +27,9 @@ int main() {
     printf("Digite o Número de Pontos Turísticos: ");
     scanf("%d", &pontos_turisticos);
 
+    densidade = populacao/area;
+    pib_per_capita = pib/populacao;
+        
 
     printf("Insira os dados da Carta 2.\n");
     printf("Digite o Estado: ");
@@ -50,9 +53,13 @@ int main() {
     printf("Digite o Número de Pontos Turísticos: ");
     scanf("%d", &pontos_turisticos2);
 
+    densidade2 = populacao2/area2;
+    pib_per_capita2 = pib2/populacao2;
+    
+
     printf("Cartas carregadas com sucesso. Dados das cartas:\n");
-    printf("Carta 1:\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %d\nÁrea: %f\nPIB: %f\nNúmero de Pontos Turísticos: %d\n", estado, codigo, cidade, populacao, area, pib, pontos_turisticos);
-    printf("\nCarta 2:\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %d\nÁrea: %f\nPIB: %f\nNúmero de Pontos Turísticos: %d\n", estado2, codigo2, cidade2, populacao2, area2, pib2, pontos_turisticos2);
+    printf("Carta 1:\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %d\nÁrea: %f\nPIB: %f\nNúmero de Pontos Turísticos: %d\nDensidade Populacional: %.2f\nPIB per Capita: %.2f\n", estado, codigo, cidade, populacao, area, pib, pontos_turisticos, densidade, pib_per_capita);
+    printf("\nCarta 2:\nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %d\nÁrea: %f\nPIB: %f\nNúmero de Pontos Turísticos: %d\nDensidade Populacional: %.2f\nPIB per Capita: %.2f\n", estado2, codigo2, cidade2, populacao2, area2, pib2, pontos_turisticos2, densidade2, pib_per_capita2);
 
     return 0;
 }
